@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://expath.org/ns/pkg" name="${package-name}" abbrev="${package-abbrev}" version="${project.version}"
+    spec="1.0">
+    <title>${package-title}</title>
+    <author id="my-organisation">My Organisation</author>
+    <website>${project.url}</website>
+    <license>GNU Lesser General Public License, version 2.1</license>
+    <copyright>true</copyright>
+
+    <!-- should be either "application" or "library" -->
+    <type>library</type>
+    <!-- type>library</type -->
+
+    <status>stable</status>
+
+    <tag>${project.artifactId}</tag>
+    <tag>application</tag>
+    <category id="apps">Applications</category>
+
+    <dependency processor="http://exist-db.org" semver-min="${exist.version}" />
+
+    <!-- Collection inside /db/apps where xar-resources will be copied to -->
+    <target>${package-abbrev}</target>
+
+    <prepare>pre-install.xq</prepare>
+    <finish>post-install.xq</finish>
+
+    <!-- includes everything in src/main/xar-resources, README.md, and LICENSE -->
+    <fileSets>
+        <fileSet>
+            <directory>${basedir}</directory>
+            <includes>
+                <include>README.md</include>
+                <include>LICENSE</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${basedir}/src/main/xar-resources</directory>
+        </fileSet>
+    </fileSets>
+
+    <!-- include the XQuery Library modules written in XQuery from this project -->
+    <xquerySets>
+    </xquerySets>
+
+    <!-- include the XQuery Library Module written in Java (JAR output) from this project -->
+    <dependencySets>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependencySet>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.18</version>
+        </dependencySet>
+        <!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
+        <dependencySet>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>2.5.3</version>
+        </dependencySet>
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <dependencySet>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.9</version>
+        </dependencySet>
+        <!-- https://mvnrepository.com/artifact/net.snowflake/snowflake-jdbc -->
+        <dependencySet>
+            <groupId>net.snowflake</groupId>
+            <artifactId>snowflake-jdbc</artifactId>
+            <version>3.12.13</version>
+        </dependencySet>
+    </dependencySets>
+
+    <!-- register the Java module to eXist-db -->
+    <components>
+    </components>
+
+</package>
