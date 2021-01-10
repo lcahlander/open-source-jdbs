@@ -11,17 +11,17 @@
         <relativePath/>
     </parent>
 
-    <groupId>org.example</groupId>
+    <groupId>org.exist-db</groupId>
     <artifactId>open-source-jdbc</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
-    <name>Example App</name>
-    <description>Example App for eXist-db</description>
-    <url>https://my-organisation.com/exist-db/app</url>
+    <name>Open Source JDBC Drivers</name>
+    <description>JDBC Drivers for mySQL, MariaDB, PostgreSQL, and snowflake</description>
+    <url>https://exist-db.org/exist-db/osjdbc</url>
 
     <organization>
-        <name>My Organisation</name>
-        <url>http://my-organisation.com</url>
+        <name>eXist-db</name>
+        <url>http://exist-db.org</url>
     </organization>
 
     <licenses>
@@ -51,10 +51,7 @@
         <exist.version>5.0.0</exist.version>
 
         <!-- used in the EXPath Package Descriptor -->
-        <package-name>https://my-organisation.com/exist-db/app</package-name>
-
-        <example.module.namespace>https://my-organisation.com/exist-db/ns/app/my-java-module</example.module.namespace>
-        <example.module.java.classname>ExampleModule</example.module.java.classname>
+        <package-name>https://exist-db.org/exist-db/osjdbc</package-name>
     </properties>
 
     <dependencies>

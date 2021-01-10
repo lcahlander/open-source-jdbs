@@ -2,28 +2,24 @@
 <package xmlns="http://expath.org/ns/pkg" name="${package-name}" abbrev="${package-abbrev}" version="${project.version}"
     spec="1.0">
     <title>${package-title}</title>
-    <author id="my-organisation">My Organisation</author>
+    <author id="exist-db">eXist-db</author>
     <website>${project.url}</website>
     <license>GNU Lesser General Public License, version 2.1</license>
     <copyright>true</copyright>
 
     <!-- should be either "application" or "library" -->
     <type>library</type>
-    <!-- type>library</type -->
 
     <status>stable</status>
 
     <tag>${project.artifactId}</tag>
-    <tag>application</tag>
+    <tag>library</tag>
     <category id="apps">Applications</category>
 
     <dependency processor="http://exist-db.org" semver-min="${exist.version}" />
 
     <!-- Collection inside /db/apps where xar-resources will be copied to -->
     <target>${package-abbrev}</target>
-
-    <prepare>pre-install.xq</prepare>
-    <finish>post-install.xq</finish>
 
     <!-- includes everything in src/main/xar-resources, README.md, and LICENSE -->
     <fileSets>
