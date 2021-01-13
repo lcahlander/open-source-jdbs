@@ -52,6 +52,9 @@
 
         <!-- used in the EXPath Package Descriptor -->
         <package-name>https://exist-db.org/exist-db/osjdbc</package-name>
+
+        <jdbc.module.namespace>https://exist-db.org/exist-db/ns/lib/jdbc-open</jdbc.module.namespace>
+        <jdbc.module.java.classname>JdbcModule</jdbc.module.java.classname>
     </properties>
 
     <dependencies>
